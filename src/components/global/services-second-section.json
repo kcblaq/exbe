@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_services_second_sections",
+  "info": {
+    "displayName": "services_secondSection",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "serviceCards": {
+      "type": "component",
+      "component": "global.service-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

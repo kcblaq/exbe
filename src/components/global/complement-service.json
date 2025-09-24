@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_global_complement_services",
+  "info": {
+    "displayName": "complementServicesUnderGetValue"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

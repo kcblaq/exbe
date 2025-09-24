@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_global_ctas",
+  "info": {
+    "displayName": "cta"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "isPrimary": {
+      "type": "boolean"
+    },
+    "isExternal": {
+      "type": "boolean"
+    },
+    "target": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

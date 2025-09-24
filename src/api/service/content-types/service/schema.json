@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "hero.hero",
+        "global.how-it-works",
+        "global.faq-section",
+        "global.from-our-blog",
+        "global.need-to-take-action-section",
+        "global.services-second-section",
+        "global.value-card",
+        "global.explore-more-services-section",
+        "global.testimonial-section"
+      ]
+    }
+  }
+}

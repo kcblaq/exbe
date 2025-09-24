@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_global_faq_sections",
+  "info": {
+    "displayName": "faqSection"
+  },
+  "options": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": "Frequently Asked Questions"
+    },
+    "faqOnService": {
+      "type": "string"
+    },
+    "faqs": {
+      "type": "component",
+      "component": "global.faq",
+      "repeatable": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "global.cta",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

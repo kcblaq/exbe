@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_global_value_cards",
+  "info": {
+    "displayName": "getvalueSection"
+  },
+  "options": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "component": "global.cta",
+      "repeatable": false
+    },
+    "addedServices": {
+      "type": "component",
+      "component": "global.complement-service",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

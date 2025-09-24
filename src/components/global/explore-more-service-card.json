@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_explore_more_service_cards",
+  "info": {
+    "displayName": "exploreMoreServiceCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "exploreMoreServicesCta": {
+      "type": "component",
+      "component": "global.cta",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_how_it_works_cards",
+  "info": {
+    "displayName": "howItWorksCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

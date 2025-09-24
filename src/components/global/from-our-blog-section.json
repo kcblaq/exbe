@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_from_our_blog_sections",
+  "info": {
+    "displayName": "fromOurBlogSection"
+  },
+  "options": {},
+  "attributes": {
+    "fromOurBlogCards": {
+      "type": "component",
+      "component": "global.from-our-blog",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

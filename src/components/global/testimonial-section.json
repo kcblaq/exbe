@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_testimonial_sections",
+  "info": {
+    "displayName": "testimonialSection"
+  },
+  "options": {},
+  "attributes": {
+    "testimonialCards": {
+      "type": "component",
+      "component": "global.testimonial-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_global_from_our_blogs",
+  "info": {
+    "displayName": "fromOurBlog"
+  },
+  "options": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "blogPosts": {
+      "type": "component",
+      "component": "global.blog-display-card",
+      "repeatable": true
+    },
+    "fromOurBlogCTA": {
+      "type": "component",
+      "component": "global.cta",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

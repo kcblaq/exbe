@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_global_need_to_take_action_sections",
+  "info": {
+    "displayName": "needToTakeActionSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "global.cta",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

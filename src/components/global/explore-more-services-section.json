@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_explore_more_services_sections",
+  "info": {
+    "displayName": "exploreMoreServicesSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "exploreMoreServiceCards": {
+      "type": "component",
+      "component": "global.explore-more-service-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

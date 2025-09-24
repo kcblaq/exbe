@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_services_service_components",
+  "info": {
+    "displayName": "Service components"
+  },
+  "options": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "hero.hero",
+      "repeatable": false
+    },
+    "services_secondSection": {
+      "type": "component",
+      "component": "global.services-second-section",
+      "repeatable": false
+    },
+    "section3_getvalue": {
+      "type": "component",
+      "component": "global.value-card",
+      "repeatable": false
+    },
+    "section4_howItWorks": {
+      "type": "component",
+      "component": "global.how-it-works",
+      "repeatable": false
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "global.testimonial-card",
+      "repeatable": true
+    },
+    "faqSection": {
+      "type": "component",
+      "component": "global.faq-section",
+      "repeatable": true
+    },
+    "exploreMoreServicesSection": {
+      "type": "component",
+      "component": "global.explore-more-services-section",
+      "repeatable": false
+    },
+    "fromOurBlogSection": {
+      "type": "component",
+      "component": "global.from-our-blog-section",
+      "repeatable": false
+    },
+    "needToTakeActionSection": {
+      "type": "component",
+      "component": "global.need-to-take-action-section",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

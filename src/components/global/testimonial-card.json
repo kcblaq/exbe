@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_global_testimonial_cards",
+  "info": {
+    "displayName": "testimonialCard"
+  },
+  "options": {},
+  "attributes": {
+    "profileImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "company": {
+      "type": "string"
+    },
+    "companyLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
