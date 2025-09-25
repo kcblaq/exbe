@@ -1,48 +1,48 @@
-import { factories } from '@strapi/strapi';
+import { factories } from "@strapi/strapi";
 
 const populate = {
   Blocks: {
     on: {
-      'hero.hero': {
+      "hero.hero": {
         populate: {
           featuredImage: {
-            fields: ['url'],
+            fields: ["url"],
           },
         },
       },
-      'global.services-second-section': {
+      "global.services-second-section": {
         populate: {
           serviceCards: {
             populate: {
               icon: {
-                fields: ['url'],
+                fields: ["url"],
               },
             },
           },
         },
       },
-      'global.value-card': {
+      "global.value-card": {
         populate: {
           cta: true,
         },
       },
-      'global.testimonial-section': {
+      "global.testimonial-section": {
         populate: {
           testimonialCards: {
             populate: {
               profileImage: {
-                fields: ['url'],
+                fields: ["url"],
               },
             },
           },
         },
       },
-      'global.faq-section': {
+      "global.faq-section": {
         populate: {
           faqs: true,
         },
       },
-      'global.explore-more-services-section': {
+      "global.explore-more-services-section": {
         populate: {
           exploreMoreServiceCards: {
             populate: {
@@ -51,42 +51,48 @@ const populate = {
           },
         },
       },
-      'global.from-our-blog-section': {
+      "global.from-our-blog-section": {
         populate: {
           fromOurBlogCards: true,
         },
+      },
+      "global.need-to-take-action-section": {
+        populate: ["cta"],
       },
     },
   },
 };
 
-export default factories.createCoreController('api::service.service', ({ strapi }) => ({
-  // Use regular function syntax to access `this`
-  async findOne(ctx) {
-    const { slug } = ctx.params;
-    if (!slug) {
-      return ctx.badRequest('Slug is required');
-    }
+export default factories.createCoreController(
+  "api::service.service",
+  ({ strapi }) => ({
+    // Use regular function syntax to access `this`
+    async findOne(ctx) {
+      const { slug } = ctx.params;
+      if (!slug) {
+        return ctx.badRequest("Slug is required");
+      }
 
-    const entity = await strapi.documents('api::service.service').findFirst({
-      filters: { slug },
-      populate: populate as any,
-    });
+      const entity = await strapi.documents("api::service.service").findFirst({
+        filters: { slug },
+        populate: populate as any,
+      });
 
-    if (!entity) {
-      return ctx.notFound('Service not found');
-    }
+      if (!entity) {
+        return ctx.notFound("Service not found");
+      }
 
-    // Use regular function to access `this`
-    const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
-    return this.transformResponse(sanitizedEntity);
-  },
+      // Use regular function to access `this`
+      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitizedEntity);
+    },
 
-  async find(ctx) {
-    const entities = await strapi.documents('api::service.service').findMany({
-      populate: populate as any,
-    });
-    const sanitizedEntities = await this.sanitizeOutput(entities, ctx);
-    return this.transformResponse(sanitizedEntities);
-  },
-}));
+    async find(ctx) {
+      const entities = await strapi.documents("api::service.service").findMany({
+        populate: populate as any,
+      });
+      const sanitizedEntities = await this.sanitizeOutput(entities, ctx);
+      return this.transformResponse(sanitizedEntities);
+    },
+  })
+);
