@@ -68,24 +68,26 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     // Use regular function syntax to access `this`
     async findOne(ctx) {
-      const { slug } = ctx.params;
-      if (!slug) {
-        return ctx.badRequest("Slug is required");
-      }
+  const { slug } = ctx.params;
+  if (!slug) {
+    return ctx.badRequest("Slug is required");
+  }
 
-      const entity = await strapi.documents("api::service.service").findFirst({
-        filters: { slug },
-        populate: populate as any,
-      });
+  const entities = await strapi.documents("api::service.service").findMany({
+    filters: { slug },
+    populate: populate as any,
+    limit: 1, // safeguard
+  });
 
-      if (!entity) {
-        return ctx.notFound("Service not found");
-      }
+  if (!entities || entities.length === 0) {
+    return ctx.notFound("Service not found");
+  }
 
-      // Use regular function to access `this`
-      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
-      return this.transformResponse(sanitizedEntity);
-    },
+  const entity = entities[0];
+  const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+  return this.transformResponse(sanitizedEntity);
+},
+
 
     async find(ctx) {
       const entities = await strapi.documents("api::service.service").findMany({
