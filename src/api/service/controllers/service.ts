@@ -8,6 +8,9 @@ const populate = {
           featuredImage: {
             fields: ["url"],
           },
+          cta: {
+            populate: true
+          }
         },
       },
       "global.services-second-section": {

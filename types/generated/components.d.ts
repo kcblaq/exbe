@@ -234,6 +234,7 @@ export interface HeroHero extends Struct.ComponentSchema {
     featuredImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    isPrimary: Schema.Attribute.Boolean;
     title: Schema.Attribute.String;
   };
 }
