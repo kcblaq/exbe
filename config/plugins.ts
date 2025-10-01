@@ -1,5 +1,5 @@
-export default (env) => ({
-     upload: {
+export default ({ env }) => ({
+  upload: {
     config: {
       provider: 'cloudinary',
       providerOptions: {
