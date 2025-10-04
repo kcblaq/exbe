@@ -496,12 +496,12 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
         'hero.hero',
         'global.how-it-works',
         'global.faq-section',
-        'global.from-our-blog',
         'global.need-to-take-action-section',
         'global.services-second-section',
         'global.value-card',
         'global.explore-more-services-section',
         'global.testimonial-section',
+        'global.from-our-blog-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

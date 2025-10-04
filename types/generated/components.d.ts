@@ -111,7 +111,10 @@ export interface GlobalFromOurBlogSection extends Struct.ComponentSchema {
     displayName: 'fromOurBlogSection';
   };
   attributes: {
-    fromOurBlogCards: Schema.Attribute.Component<'global.from-our-blog', true>;
+    blogs: Schema.Attribute.Component<'global.blog-display-card', true>;
+    fromBlogCta: Schema.Attribute.Component<'global.cta', false>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 

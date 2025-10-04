@@ -9,8 +9,8 @@ const populate = {
             fields: ["url"],
           },
           cta: {
-            populate: true
-          }
+            populate: "*",
+          },
         },
       },
       "global.services-second-section": {
@@ -29,6 +29,9 @@ const populate = {
           cta: true,
         },
       },
+      "global.how-it-works": {
+        populate: "*"
+      },
       "global.testimonial-section": {
         populate: {
           testimonialCards: {
@@ -42,21 +45,27 @@ const populate = {
       },
       "global.faq-section": {
         populate: {
-          faqs: true,
+          faqs: "*",
         },
       },
       "global.explore-more-services-section": {
         populate: {
           exploreMoreServiceCards: {
             populate: {
-              exploreMoreServicesCta: true,
+              exploreMoreServicesCta: "*",
             },
           },
         },
       },
       "global.from-our-blog-section": {
         populate: {
-          fromOurBlogCards: true,
+          blogs: {
+            populate: {
+              previewImage: {
+                fields: ["url"],
+              },
+            },
+          },
         },
       },
       "global.need-to-take-action-section": {
@@ -71,26 +80,25 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     // Use regular function syntax to access `this`
     async findOne(ctx) {
-  const { slug } = ctx.params;
-  if (!slug) {
-    return ctx.badRequest("Slug is required");
-  }
+      const { slug } = ctx.params;
+      if (!slug) {
+        return ctx.badRequest("Slug is required");
+      }
 
-  const entities = await strapi.documents("api::service.service").findMany({
-    filters: { slug },
-    populate: populate as any,
-    limit: 1, // safeguard
-  });
+      const entities = await strapi.documents("api::service.service").findMany({
+        filters: { slug },
+        populate: populate as any,
+        limit: 1, // safeguard
+      });
 
-  if (!entities || entities.length === 0) {
-    return ctx.notFound("Service not found");
-  }
+      if (!entities || entities.length === 0) {
+        return ctx.notFound("Service not found");
+      }
 
-  const entity = entities[0];
-  const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
-  return this.transformResponse(sanitizedEntity);
-},
-
+      const entity = entities[0];
+      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitizedEntity);
+    },
 
     async find(ctx) {
       const entities = await strapi.documents("api::service.service").findMany({
@@ -99,5 +107,27 @@ export default factories.createCoreController(
       const sanitizedEntities = await this.sanitizeOutput(entities, ctx);
       return this.transformResponse(sanitizedEntities);
     },
+    // async find(ctx) {
+    //   const entities = await strapi.documents("api::service.service").findMany({
+    //     populate: {
+    //       Blocks: {
+    //         on: {
+    //           "hero.hero": {
+    //             populate: {
+    //               featuredImage: {
+    //                 fields: ["url"],
+    //               },
+    //               cta: {
+    //                 populate: "*"
+    //               }
+    //             },
+    //           },
+    //         },
+    //       },
+    //     },
+    //   });
+    //   const sanitizedEntities = await this.sanitizeOutput(entities, ctx);
+    //   return this.transformResponse(sanitizedEntities);
+    // },
   })
 );

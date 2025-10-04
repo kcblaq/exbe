@@ -5,9 +5,20 @@
   },
   "options": {},
   "attributes": {
-    "fromOurBlogCards": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "fromBlogCta": {
       "type": "component",
-      "component": "global.from-our-blog",
+      "component": "global.cta",
+      "repeatable": false
+    },
+    "blogs": {
+      "type": "component",
+      "component": "global.blog-display-card",
       "repeatable": true
     }
   },
